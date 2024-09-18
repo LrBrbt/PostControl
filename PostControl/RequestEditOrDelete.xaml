@@ -5,21 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostControl"
         mc:Ignorable="d"
-        Title="RequestEditOrDelete" Height="450" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="RequestEditOrDelete" Height="550" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="199*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="501*"/>
         </Grid.RowDefinitions>
         <Border Background="#000000" RenderTransformOrigin="0.5,0.5" Height="50" VerticalAlignment="Center">
-            <Label Content="Журналы" Foreground="White" FontSize="25" FontFamily="VAG World" Margin="10,-10,-10,0"/>
+            <Label Content="Журналы" Foreground="White" FontSize="25" FontFamily="VAG World" Margin="10,-12,-10,2"/>
         </Border>
         <Button x:Name="exitBtn" FontSize="25" Content="X" Style="{DynamicResource exitBtnStyle}" FontWeight="Bold"   Margin="336,0,0,2"/>
         <StackPanel Grid.Row="1">
-            <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Row="3" Text="Заявка на редактирование/удаление записи" Style="{DynamicResource TextBoxMonoStyle}" Background="#D7D7D7" 
+            <TextBox IsReadOnly="True" TextWrapping="Wrap" Grid.Row="3" Text="Заявка на редактирование/удаление записи" Style="{DynamicResource TextBoxMonoStyle}" Background="#A5A2A2" 
           Width="NaN" Height="70" FontSize="20" HorizontalContentAlignment="Center" Margin="10,16,10,16" TextChanged="TextBox_TextChanged" VerticalContentAlignment="Center"/>
             <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-            <ComboBox Style="{DynamicResource ComboBoxMonoStyle}" x:Name="selectedLogCb" Height="56" Width="441"/>
+            <ComboBox Background="#D7D7D7" Style="{DynamicResource ComboBoxMonoStyle}" x:Name="selectedLogCb" Height="56" Width="470"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
+            <TextBox TextWrapping="Wrap" Grid.Row="3" Style="{DynamicResource TextBoxMonoStyle}" Background="#F3F1F1" Width="473" Height="227" FontSize="20"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
+            <Button x:Name="sendRequest" Content="Отправить" VerticalAlignment="Center" Height="55" Width="250">
+                <Button.Resources>
+                    <Style  TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="{DynamicResource MonoBlack}"/>
+                        <Setter Property="Height" Value="80"/>
+                        <Setter Property="Width" Value="550"/>
+                        <Setter Property="FontFamily" Value="VAG World"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Foreground" Value="{DynamicResource MonoWhite}"/>
+                        <Setter Property="SnapsToDevicePixels" Value="True" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border 
+                                         BorderBrush="{TemplateBinding Background}"
+                                         BorderThickness="1"
+                                         Background="{TemplateBinding Background}"
+                                         CornerRadius="15" SnapsToDevicePixels="True">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
