@@ -21,6 +21,8 @@ namespace PostControl
             InitializeComponent();
             Autorization autorization = new Autorization();
             autorization.ShowDialog();
+            string[] a = { "dsds", "dsdadas" };
+            tableGrid.ItemsSource = a.ToList();
         }
     }
 }

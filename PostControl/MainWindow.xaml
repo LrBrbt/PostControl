@@ -5,8 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostControl"
         mc:Ignorable="d"
-        Title="Журналы" Height="820" Width="1500" WindowStartupLocation="CenterScreen">
+        Title="Журналы" Height="820" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="102*"/>
+            <RowDefinition Height="487*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#000000" RenderTransformOrigin="0.5,0.5" Height="50" VerticalAlignment="Center">
+            <Label Content="Журналы" Foreground="White" FontSize="30" FontFamily="VAG World" Margin="10,-10,-10,0"/>
+        </Border>
+        <Button x:Name="exitBtn" Content="X"   Style="{DynamicResource exitBtnStyle}" FontWeight="Bold" Grid.Row="0"  Margin="1391,0,0,5"/>
+
+        <StackPanel Background="#565656" Grid.Row="1" Orientation="Horizontal">
+            <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
+            <TextBox x:Name="findTxt" Height="50" Text="Поиск" >
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Background" Value="{DynamicResource MonoLightGrey}"/>
+                        <Setter Property="SpellCheck.IsEnabled" Value="True"/>
+                        <Setter Property="Language" Value="ru-ru"/>
+                        <Setter Property="Height" Value="100"/>
+                        <Setter Property="Width" Value="550"/>
+                        <Setter Property="FontFamily" Value="VAG World"/>
+                        <Setter Property="FontStyle" Value="Italic"/>
+                        <Setter Property="Foreground" Value="#A5A2A2"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="SnapsToDevicePixels" Value="True" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                    <Border CornerRadius="15"
+                                        BorderBrush="{TemplateBinding Background}"
+                                        BorderThickness="{TemplateBinding Background}"
+                                        Background="{TemplateBinding Background}"
+                                        SnapsToDevicePixels="True">
+                                        <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBox IsReadOnly="True" Text="     Личный кабинет " Style="{DynamicResource TextBoxMonoStyle}" Background="#F3F1F1" Width="1070" Height="70" 
+                 HorizontalAlignment="Left" Margin="6,16,0,17" FontSize="30" FontStyle="Italic"/>
+            <Separator Width="290" Style="{DynamicResource SeparatorMonoStyle}"/>
+            <Button x:Name="menuBtn" Style="{DynamicResource ButtonMonoStyle}" Width="120" Height="70">
+                <Image Height="50" Source="/Images/menu.png" Stretch="Fill" Width="80"/>
+            </Button>
+        </StackPanel>
+        <TextBox IsReadOnly="True" Grid.Row="3" Text="Текст заголовка таблицы" Style="{DynamicResource TextBoxMonoStyle}" Background="#D7D7D7" 
+                 Width="NaN" Height="70" FontSize="35" HorizontalContentAlignment="Center" Margin="10,16,10,16"/>
+
+
+        <DataGrid x:Name="tableGrid" Grid.Row="4"  HeadersVisibility="Column" BorderThickness="0" GridLinesVisibility="Horizontal">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ п\п" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="100"/>
+                <DataGridTextColumn Header="Дата" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="170"/>
+                <DataGridTextColumn Header="Корреспондент" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="280"/>
+                <DataGridTextColumn Header="Краткое содержание" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="450"/>
+                <DataGridTextColumn Header="Резолюция" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="250"/>
+                <DataGridTextColumn Header="Отметка о вручении" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="245"/>
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style  TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridRow}">
+                                <Border Background="{DynamicResource MonoDarkGrey}">
+                                    <Border BorderThickness="1"
+                                         CornerRadius="6"
+                                         Background="{DynamicResource MonoLightGrey}"
+                                         Padding="10,0,0,0"
+                                         Margin="2">        
+                                        <ContentPresenter/>
+                                    </Border>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="{DynamicResource MonoBlack}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="FontSize" Value="15"/>
+                </Style>
+            </DataGrid.RowStyle>    
+        </DataGrid>
     </Grid>
 </Window>

@@ -90,6 +90,9 @@
         <Setter Property="Width" Value="10"/>
     </Style>
 
+
+
+    <!--Кнопка выхода-->
     <Style x:Key="exitBtnStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Black"/>
         <Setter Property="Foreground" Value="White"/>
@@ -112,5 +115,33 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+
+    <!--Шапка таблицы-->
+    <Style x:Key="DataGridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Border Background="{DynamicResource MonoDarkGrey}">
+                        <Border BorderThickness="1"
+                            CornerRadius="6"
+                            Background="{DynamicResource MonoLightGrey}"
+                            Padding="10,0,0,0"
+                            Margin="2">
+                            <ContentPresenter/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{DynamicResource MonoBlack}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    
+    
+
 
 </ResourceDictionary>

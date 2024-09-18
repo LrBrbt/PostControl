@@ -12,6 +12,9 @@
         <Border Background="#000000" RenderTransformOrigin="0.5,0.5" Height="50" VerticalAlignment="Top">
             <Label Content="Журналы" Foreground="White" FontSize="30" FontFamily="VAG World" Margin="10,-10,-10,0"/>
         </Border>
+        <Button x:Name="exitBtn" Content="X"  Margin="1391,0,0,770" Style="{DynamicResource exitBtnStyle}" FontWeight="Bold" Click="exitBtn_Click"/>
+        
+
         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550" Fill="#565656" RadiusX="45" RadiusY="45"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550">
             <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="60" FontFamily="VAG World" Foreground="White" Height="95"/>
@@ -33,6 +36,5 @@
             <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="35"/>
             <Button x:Name="enterBtn" Style="{DynamicResource ButtonMonoStyle}" Content="Войти" FontSize="40"/>
         </StackPanel>
-        <Button x:Name="exitBtn" Content="X"  Margin="1391,0,0,770" Style="{DynamicResource exitBtnStyle}" FontWeight="Bold" Click="exitBtn_Click"/>
     </Grid>
 </Window>
