@@ -21,7 +21,7 @@
             <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
             <ComboBox Background="#D7D7D7" Style="{DynamicResource ComboBoxMonoStyle}" x:Name="selectedLogCb" Height="56" Width="470"/>
             <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-            <TextBox TextWrapping="Wrap" Grid.Row="3" Style="{DynamicResource TextBoxMonoStyle}" Background="#F3F1F1" Width="473" Height="227" FontSize="20"/>
+            <TextBox TextWrapping="Wrap" Grid.Row="3" Text="Оставьте Вашу заявку здесь!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontStyle="Italic" Foreground="#B5B5B5" Style="{DynamicResource TextBoxMonoStyle}" Background="#F3F1F1" Width="473" Height="227" FontSize="20"/>
             <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
             <Button x:Name="sendRequest" Content="Отправить" VerticalAlignment="Center" Height="55" Width="250">
                 <Button.Resources>

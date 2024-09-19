@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Themes/Mono/MonoStyle.xaml"/>
                 <ResourceDictionary Source="./Themes/Mono/ComboBox.xaml"/>
+                <ResourceDictionary Source="./Themes/Mono/DatePicker.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

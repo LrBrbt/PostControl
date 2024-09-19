@@ -16,13 +16,13 @@
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="550"/>
         <Setter Property="FontFamily" Value="VAG World"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="25"/>
         <Setter Property="Foreground" Value="{DynamicResource MonoBlack}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border CornerRadius="40"
+                    <Border CornerRadius="25"
                             BorderBrush="{TemplateBinding Background}"
                             BorderThickness="{TemplateBinding Background}"
                             Background="{TemplateBinding Background}"
