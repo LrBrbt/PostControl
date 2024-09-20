@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Цветовая гамма программы/Color scheme of the program-->
+
+    <!--Для темы моно/for mono theme -->
+    <SolidColorBrush x:Key="MonoFirstAccentColor" Color="#000000"/>
+    <SolidColorBrush x:Key="MonoSecondAccentColor" Color="#565656"/>
+    <SolidColorBrush x:Key="MonoNonAccentColor" Color="#D7D7D7"/>
+    <SolidColorBrush x:Key="MonoProgramHeadColor" Color="#020202"/>
+    <SolidColorBrush x:Key="MonoDarkRectangelColor" Color="#525151"/>
+    <SolidColorBrush x:Key="MonoLightRectangelColor" Color="#F3F1F1"/>
+    <SolidColorBrush x:Key="MonoBackgroundColor" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="MonoTextBoxColor" Color="#FFFFFF"/>
+
+    <!--Универсальные настройки/universal settings-->
+    <SolidColorBrush x:Key="LightTextColor" Color="#FAFAFA"/>
+    <SolidColorBrush x:Key="DarkTextColor" Color="#010000"/>
+</ResourceDictionary>

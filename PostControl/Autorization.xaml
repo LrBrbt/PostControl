@@ -8,33 +8,38 @@
         Title="Журналы" Height="820" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanMinimize">
 
     <Grid>
-
-        <Border Background="#000000" RenderTransformOrigin="0.5,0.5" Height="50" VerticalAlignment="Top">
-            <Label Content="Журналы" Foreground="White" FontSize="30" FontFamily="VAG World" Margin="10,-10,-10,0"/>
-        </Border>
-        <Button x:Name="exitBtn" Content="X"  Margin="1391,0,0,770" Style="{DynamicResource exitBtnStyle}" FontWeight="Bold" Click="exitBtn_Click"/>
-        
-
-        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550" Fill="#565656" RadiusX="45" RadiusY="45"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550">
-            <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="60" FontFamily="VAG World" Foreground="White" Height="95"/>
-            <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="50"/>
-            <Grid>
-                <TextBox x:Name="loginTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Логин" HorizontalContentAlignment="Center" FontSize="40"/>
-                <Rectangle Fill="#D7D7D7" RadiusX="40" RadiusY="40" Width="100" HorizontalAlignment="Left" Margin="50,0,0,0"/>
-                <Image Height="70" Width="70" Source="/Images/user.png" Margin="65,15,515,15" Stretch="UniformToFill"/>
-            </Grid>
-            <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-            <Grid>
-                <PasswordBox x:Name="PasswordTxt" Style="{DynamicResource PasswordBoxMonoStyle}" Password="Пароль" HorizontalContentAlignment="Center" FontSize="40"/>
-                <Rectangle Fill="#D7D7D7" RadiusX="40" RadiusY="40" Width="100" HorizontalAlignment="Left" Margin="50,0,0,0"/>
-                <Image  Height="70" Width="70" Source="/Images/lock.png" Stretch="Fill" Margin="65,15,515,15"/>
-            </Grid>
-            <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="3"/>
-            <Button x:Name="forgetPasswordBtn" Content="Забыли пароль?" FontFamily="VAG World" Foreground="#D7D7D7" Background="Transparent" 
-                     FontSize="25" BorderBrush="Transparent" Width="230" Height="43"/>
-            <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="35"/>
-            <Button x:Name="enterBtn" Style="{DynamicResource ButtonMonoStyle}" Content="Войти" FontSize="40"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch" Width="NaN">
+            <Border Style="{DynamicResource BorderMonoStyle}">
+                <Label Style="{DynamicResource LabelMonoStyle}" Content="Журналы" />
+            </Border>
+            <Button x:Name="exitBtn" Style="{DynamicResource exitBtnStyle}" Width="50"/>
         </StackPanel>
+        <Grid Grid.Row="1">
+            <Rectangle Style="{DynamicResource MonoDarkRectangle}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="550" Height="550">
+                <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="60" FontFamily="PF Square Sans Pro" Foreground="{DynamicResource LightTextColor}" Height="95"/>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="50"/>
+                <Grid>
+                    <TextBox x:Name="loginTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Логин" HorizontalContentAlignment="Center" FontSize="40" Height="70"/>
+                    <Rectangle Fill="#D7D7D7" RadiusX="25" RadiusY="25" Width="100" HorizontalAlignment="Left"/>
+                    <Image Height="50" Width="50" Source="/Images/user.png" Margin="25,0,475,0" />
+                </Grid>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
+                <Grid>
+                    <PasswordBox x:Name="PasswordTxt" Style="{DynamicResource PasswordBoxMonoStyle}" Password="Пароль" HorizontalContentAlignment="Center" FontSize="40" Height="70"/>
+                    <Rectangle Fill="#D7D7D7" RadiusX="25" RadiusY="25" Width="100" HorizontalAlignment="Left"/>
+                    <Image  Height="50" Width="50" Source="/Images/lock.png" Margin="25,0,475,0"/>
+                </Grid>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="3"/>
+                <Button x:Name="forgetPasswordBtn" Content="Забыли пароль?" FontFamily="PF Square Sans Pro" Foreground="#D7D7D7" Background="Transparent" 
+                     FontSize="25" BorderBrush="Transparent" Width="230" Height="43"/>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="35"/>
+                <Button x:Name="enterBtn" Style="{DynamicResource ButtonFirstAccentMonoStyle}" Content="Войти" FontSize="40" Height="70"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
