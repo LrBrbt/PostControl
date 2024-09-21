@@ -5,40 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostControl"
         mc:Ignorable="d"
-        Title="Журналы" Height="820" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanMinimize">
+        Height="820" 
+        Width="1500" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        ResizeMode="CanMinimize">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="78"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch" Width="NaN">
-            <Border Style="{DynamicResource BorderMonoStyle}">
-                <Label Style="{DynamicResource LabelMonoStyle}" Content="Журналы" />
+        <StackPanel x:Name="programHeadSp" 
+                    VerticalAlignment="Stretch"
+                    Grid.Row="0" 
+                    Orientation="Horizontal">
+            <Border x:Name="programHeadBorder"
+                    Style="{DynamicResource BorderMonoStyle}">
+                <Label x:Name="programNameLbl"
+                       Style="{DynamicResource LabelMonoStyle}" 
+                       Content="Журналы" />
             </Border>
-            <Button x:Name="exitBtn" Style="{DynamicResource exitBtnStyle}" Width="50"/>
+            <Button x:Name="exitBtn" 
+                    Style="{DynamicResource exitBtnStyle}" 
+                    Width="50"/>
         </StackPanel>
         <Grid Grid.Row="1">
-            <Rectangle Style="{DynamicResource MonoDarkRectangle}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="650" Height="550" />
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="550" Height="550">
-                <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize="60" FontFamily="PF Square Sans Pro" Foreground="{DynamicResource LightTextColor}" Height="95"/>
-                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="50"/>
+            <Rectangle Style="{DynamicResource MonoDarkRectangle}"                        
+                       Width="650" 
+                       Height="550" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+            <StackPanel HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Width="550" 
+                        Height="550">
+                <TextBlock Text="Авторизация" 
+                           HorizontalAlignment="Center" 
+                           FontSize="60" 
+                           FontFamily="PF Square Sans Pro" 
+                           Foreground="{DynamicResource LightTextColor}" 
+                           Height="95"/>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                           Height="90"/>
                 <Grid>
-                    <TextBox x:Name="loginTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Логин" HorizontalContentAlignment="Center" FontSize="40" Height="70"/>
-                    <Rectangle Fill="#D7D7D7" RadiusX="25" RadiusY="25" Width="100" HorizontalAlignment="Left"/>
-                    <Image Height="50" Width="50" Source="/Images/user.png" Margin="25,0,475,0" />
+                    <TextBox x:Name="loginTxt" 
+                             Style="{DynamicResource TextBoxMonoStyle}" 
+                             Text="Логин" 
+                             HorizontalContentAlignment="Center" 
+                             FontSize="40" 
+                             Height="70"/>
+                    <Rectangle Fill="#D7D7D7" 
+                               RadiusX="25" 
+                               RadiusY="25" 
+                               Width="100" 
+                               HorizontalAlignment="Left"/>
+                    <Image Height="50"
+                           Width="50" 
+                           Source="/Images/user.png"
+                           Margin="25,0,475,0" />
                 </Grid>
                 <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
                 <Grid>
-                    <PasswordBox x:Name="PasswordTxt" Style="{DynamicResource PasswordBoxMonoStyle}" Password="Пароль" HorizontalContentAlignment="Center" FontSize="40" Height="70"/>
-                    <Rectangle Fill="#D7D7D7" RadiusX="25" RadiusY="25" Width="100" HorizontalAlignment="Left"/>
-                    <Image  Height="50" Width="50" Source="/Images/lock.png" Margin="25,0,475,0"/>
+                    <PasswordBox x:Name="PasswordTxt" 
+                                 Style="{DynamicResource PasswordBoxMonoStyle}" 
+                                 Password="Пароль" 
+                                 HorizontalContentAlignment="Center" 
+                                 FontSize="40" 
+                                 Height="70"/>
+                    <Rectangle Fill="#D7D7D7" 
+                               RadiusX="25" 
+                               RadiusY="25"
+                               Width="100" 
+                               HorizontalAlignment="Left"/>
+                    <Image  Height="50" 
+                            Width="50" 
+                            Source="/Images/lock.png" 
+                            Margin="25,0,475,0"/>
                 </Grid>
-                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="3"/>
-                <Button x:Name="forgetPasswordBtn" Content="Забыли пароль?" FontFamily="PF Square Sans Pro" Foreground="#D7D7D7" Background="Transparent" 
-                     FontSize="25" BorderBrush="Transparent" Width="230" Height="43"/>
-                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="35"/>
-                <Button x:Name="enterBtn" Style="{DynamicResource ButtonFirstAccentMonoStyle}" Content="Войти" FontSize="40" Height="70"/>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                           Height="115"/>
+                <Button x:Name="enterBtn" 
+                        Style="{DynamicResource ButtonFirstAccentMonoStyle}" 
+                        Content="Войти" 
+                        FontSize="40" 
+                        Height="70"/>
             </StackPanel>
         </Grid>
     </Grid>
