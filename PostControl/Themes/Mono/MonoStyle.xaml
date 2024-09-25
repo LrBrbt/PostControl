@@ -18,12 +18,14 @@
                 Value="True" />
         <Setter Property="IsReadOnly" 
                 Value="False"/>
+        <Setter Property="BorderBrush" 
+                Value="{DynamicResource MonoTextBoxColor}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="25"
-                            BorderBrush="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="4"
                             Background="{TemplateBinding Background}"
                             SnapsToDevicePixels="True">
                         <ScrollViewer Margin="0" 
@@ -32,6 +34,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" 
+                     Value="True">
+                <Setter Property="BorderBrush" 
+                        Value="#D7D7D7"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!--Акцентное текстовое поле для отображения информации/Accent TextBox IsReadOnly=true-->
@@ -99,12 +108,14 @@
                 Value="{DynamicResource DarkTextColor}"/>
         <Setter Property="SnapsToDevicePixels" 
                 Value="True" />
+        <Setter Property="BorderBrush" 
+                Value="{DynamicResource MonoTextBoxColor}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type PasswordBox}">
                     <Border CornerRadius="25"
-                            BorderBrush="{TemplateBinding Background}"
-                            BorderThickness="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="4"
                             Background="{TemplateBinding Background}"
                             SnapsToDevicePixels="True">
                         <ScrollViewer Margin="0" 
@@ -113,6 +124,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" 
+              Value="True">
+                <Setter Property="BorderBrush" 
+                 Value="#D7D7D7"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!--Кнопка первого акцента/first accent button-->
@@ -140,6 +158,43 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MonoBackgroundColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource DarkTextColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Кнопка первого акцента/first accent button-->
+    <Style x:Key="MenuButtonMonoStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Background" 
+              Value="{DynamicResource MonoNonAccentColor}"/>
+        <Setter Property="FontFamily" 
+              Value="PF Square Sans Pro"/>
+        <Setter Property="Foreground" 
+              Value="{DynamicResource LightTextColor}"/>
+        <Setter Property="SnapsToDevicePixels" 
+              Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border BorderBrush="{TemplateBinding Background}"
+                          BorderThickness="1"
+                          Background="{TemplateBinding Background}"
+                          CornerRadius="25" 
+                          SnapsToDevicePixels="True">
+                        <Label Content="{TemplateBinding Header}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MonoBackgroundColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource DarkTextColor}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!--Кнопка второго акцента/second accent button-->
@@ -167,6 +222,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource MonoNonAccentColor}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 
@@ -250,8 +310,10 @@
                 Value="30"/>
         <Setter Property="BorderThickness" 
                 Value="0"/>
-        <Setter Property="Width" 
-                Value="50"/>
+        <Setter Property="Width"
+                Value="60"/>
+        <Setter Property="BorderBrush"
+                Value="Black"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -283,8 +345,9 @@
                 Value="0.5,0.5"/>
         <Setter Property="Height" 
                 Value="80"/>
-        <Setter Property="VerticalAlignment"
-                Value="Center"/>
+        <Setter Property="BorderBrush"
+                Value="Black"/>
+        
     </Style>
 
     <!--Надпись /Label Program head-->

@@ -13,22 +13,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="78"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="programHeadSp" 
                     VerticalAlignment="Stretch"
                     Grid.Row="0" 
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    Background="Black">
             <Border x:Name="programHeadBorder"
                     Style="{DynamicResource BorderMonoStyle}">
                 <Label x:Name="programNameLbl"
-                       Style="{DynamicResource LabelMonoStyle}" 
+                       Style="{DynamicResource LabelMonoStyle}"
+                       VerticalContentAlignment="Center"
                        Content="Журналы" />
             </Border>
+            <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="0"/>
             <Button x:Name="exitBtn" 
                     Style="{DynamicResource exitBtnStyle}" 
-                    Width="50"/>
+                    Click="ExitBtn_Click"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Rectangle Style="{DynamicResource MonoDarkRectangle}"                        
@@ -89,7 +92,8 @@
                         Style="{DynamicResource ButtonFirstAccentMonoStyle}" 
                         Content="Войти" 
                         FontSize="40" 
-                        Height="70"/>
+                        Height="70"
+                        Click="EnterBtn_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

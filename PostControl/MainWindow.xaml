@@ -5,44 +5,138 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostControl"
         mc:Ignorable="d"
-        Title="Журналы" Height="820" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Журналы" 
+        Height="820" 
+        Width="1500" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        Loaded="Window_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="941*"/>
+            <ColumnDefinition Width="559*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="78*"/>
             <RowDefinition Height="103*"/>
             <RowDefinition Height="102*"/>
             <RowDefinition Height="487*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch" Width="NaN">
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal" 
+                    Width="NaN" Grid.ColumnSpan="2">
             <Border Style="{DynamicResource BorderMonoStyle}">
-                <Label Style="{DynamicResource LabelMonoStyle}" Content="Журналы" />
+                <Label Style="{DynamicResource LabelMonoStyle}" 
+                       Content="Журналы" />
             </Border>
-            <Button x:Name="exitBtn" Style="{DynamicResource exitBtnStyle}" Width="50"/>
+            <Button x:Name="exitBtn" 
+                    Style="{DynamicResource exitBtnStyle}" 
+                    Width="50"
+                    Click="exitBtn_Click"/>
         </StackPanel>
 
-        <StackPanel Background="{DynamicResource MonoSecondAccentColor}" Grid.Row="1" Orientation="Horizontal">
+        <StackPanel Background="{DynamicResource MonoSecondAccentColor}"
+                    Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
             <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-            <TextBox x:Name="findTxt" Height="50" Text="Поиск" Style="{DynamicResource TextBoxMonoStyle}" Width="450" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" Foreground="{DynamicResource MonoNonAccentColor}"/>
+            <TextBox x:Name="findTxt" 
+                     Height="50" 
+                     Text="Поиск" 
+                     Margin="10,0"
+                     Padding="10"
+                     Style="{DynamicResource TextBoxMonoStyle}" 
+                     Width="450" 
+                     VerticalContentAlignment="Center" 
+                     FontSize="20" 
+                     FontStyle="Italic" 
+                     Foreground="{DynamicResource MonoNonAccentColor}"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBox Text="Личный кабинет " Style="{DynamicResource NotAccentTextBlockMonoStyle}" Width="1070" Height="70" HorizontalAlignment="Left" FontSize="30" FontStyle="Italic" VerticalContentAlignment="Center"/>
-            <Separator Width="290" Style="{DynamicResource SeparatorMonoStyle}"/>
-            <Button x:Name="menuBtn" Style="{DynamicResource ButtonSecondAccentMonoStyle}" Width="120" Height="70">
-                <Image Height="50" Source="/Images/menu.png" Stretch="Fill" Width="80"/>
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBox x:Name="accountNameTxt"
+                     Text="" 
+                     Style="{DynamicResource NotAccentTextBlockMonoStyle}" 
+                     Width="1070" 
+                     Height="70"                      
+                     Margin="10,0"
+                     Padding="10"
+                     HorizontalAlignment="Left" 
+                     FontSize="30" 
+                     FontStyle="Italic" 
+                     VerticalContentAlignment="Center"/>
+            <Separator Width="270" 
+                       Style="{DynamicResource SeparatorMonoStyle}"/>
+            <Button x:Name="menuBtn" 
+                    Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                    Width="120" 
+                    Height="70"
+                    Click="menuBtn_Click">
+                <Image Height="50" 
+                       Source="/Images/menu.png" 
+                       Stretch="Fill" 
+                       Width="80"/>
             </Button>
         </StackPanel>
-        <TextBox Grid.Row="3" Text="Текст заголовка таблицы" Style="{DynamicResource AccentTextBlockMonoStyle}" Width="NaN" Height="70" FontSize="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        
-        <DataGrid x:Name="tableGrid" Grid.Row="4"  HeadersVisibility="Column" BorderThickness="0" GridLinesVisibility="Horizontal">
+        <TextBox Grid.Row="3" 
+                 Text="Текст заголовка таблицы" 
+                 Style="{DynamicResource AccentTextBlockMonoStyle}" 
+                 Width="NaN" 
+                 Height="70" 
+                 FontSize="35" 
+                 HorizontalContentAlignment="Center" 
+                 VerticalContentAlignment="Center"
+                 Margin="10,0"
+                 Foreground="{DynamicResource LightTextColor}" Grid.ColumnSpan="2"/>
+
+        <DataGrid x:Name="tableGrid" 
+                  Grid.Row="4"  
+                  HeadersVisibility="Column" 
+                  BorderThickness="0" 
+                  GridLinesVisibility="Horizontal" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="№ п\п"  Width="100"/>
-                <DataGridTextColumn Header="Дата"  Width="170"/>
-                <DataGridTextColumn Header="Корреспондент" Width="280"/>
-                <DataGridTextColumn Header="Краткое содержание" Width="450"/>
-                <DataGridTextColumn Header="Резолюция"  Width="250"/>
-                <DataGridTextColumn Header="Отметка о вручении"  Width="245"/>
+                <DataGridTextColumn Header="№ п\п"  
+                                    Width="100"/>
+                <DataGridTextColumn Header="Дата"  
+                                    Width="170"/>
+                <DataGridTextColumn Header="Корреспондент" 
+                                    Width="280"/>
+                <DataGridTextColumn Header="Краткое содержание" 
+                                    Width="450"/>
+                <DataGridTextColumn Header="Резолюция" 
+                                    Width="250"/>
+                <DataGridTextColumn Header="Отметка о вручении"  
+                                    Width="245"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Menu x:Name="ProgramMenu" Visibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" FontFamily="PF Square Sans Pro" FontSize="35" Background="{DynamicResource MonoSecondAccentColor}">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="10"/>
+            <MenuItem x:Name="exitMenuBtn" Header="Х" HorizontalAlignment="Right" Click="MenuExit_Click">
+                <MenuItem.Resources>
+                    <Style TargetType="{x:Type MenuItem}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource LightTextColor}"/>
+                                <Setter Property="Background" Value="{DynamicResource MonoSecondAccentColor}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </MenuItem.Resources>
+            </MenuItem>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="55"/>
+            <MenuItem x:Name="allLogsBtn" Style="{DynamicResource MenuButtonMonoStyle}" Header="Все журналы корреспонденции" Height="70" Margin="10,0" Padding="10" Click="allLogsBtn_Click"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="25"/>
+            <MenuItem x:Name="anotherTypeLogsBtn" Style="{DynamicResource MenuButtonMonoStyle}" Margin="10,0" Padding="10"  Header="Исходящая корреспонденция" Height="70" Click="anotherTypeLogsBtn_Click"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="25"/>
+            <MenuItem x:Name="orderBtn" Style="{DynamicResource MenuButtonMonoStyle}" Margin="10,0" Padding="10"  Click="orderBtn_Click" Header="Оставить заявку на редактирование" FontSize="30" Height="70"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="25"/>
+            <MenuItem x:Name="SettingsBtn" Style="{DynamicResource MenuButtonMonoStyle}" Margin="10,0" Padding="10"  Click="SettingsBtn_Click" Header="Настройки" Height="70"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle }" Height="180" />
+            <MenuItem x:Name="ChangeUserBtn" Style="{DynamicResource MenuButtonMonoStyle}" Margin="10,0" Padding="10"  Click="ChangeUserBtn_Click" Header="Сменить пользователя" Height="70"/>
+        </Menu>
     </Grid>
 </Window>

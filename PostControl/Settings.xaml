@@ -11,10 +11,23 @@
             <RowDefinition Height="47*"/>
             <RowDefinition Height="373*"/>
         </Grid.RowDefinitions>
-        <Border Background="#000000" RenderTransformOrigin="0.5,0.5" Height="50" VerticalAlignment="Center">
-            <Label Content="Журналы" Foreground="White" FontSize="30" FontFamily="VAG World" Margin="10,-10,-10,0"/>
+        <Border Background="#000000" 
+                RenderTransformOrigin="0.5,0.5" 
+                Height="50" 
+                VerticalAlignment="Center">
+            <Label Content="Журналы" 
+                   Foreground="White" 
+                   FontSize="30" 
+                   FontFamily="PF Square Sans Pro" 
+                   Margin="10,-10,-10,0"/>
         </Border>
-        <Button x:Name="exitBtn" Content="X"   Style="{DynamicResource exitBtnStyle}" FontWeight="Bold" Grid.Row="0"  Margin="690,0,0,5" RenderTransformOrigin="0.5,0.5">
+        <Button x:Name="exitBtn" 
+                Content="X"   
+                Style="{DynamicResource exitBtnStyle}" 
+                FontWeight="Bold" 
+                Grid.Row="0"  
+                Margin="690,0,0,5" 
+                RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -24,47 +37,127 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="1" 
+                    HorizontalAlignment="Center">
             <Grid>
-                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="350" Fill="#D7D7D7" RadiusX="45" RadiusY="45"/>
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="350">
-                    <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="10"/>
-                    <TextBox  IsReadOnly="True" Text="Внешний вид" Style="{DynamicResource TextBoxMonoStyle}" Width="280" Height="50" Background="#565656"
-                             Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Rectangle HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Width="300" Height="350" 
+                           Fill="#D7D7D7" 
+                           RadiusX="45" 
+                           RadiusY="45"/>
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center" 
+                            Width="300" 
+                            Height="350">
+                    <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                               Height="10"/>
+                    <TextBox  IsReadOnly="True" 
+                              Text="Внешний вид" 
+                              Style="{DynamicResource TextBoxMonoStyle}" 
+                              Width="280" Height="50" 
+                              Background="#565656"
+                              Foreground="White" 
+                              HorizontalContentAlignment="Center" 
+                              VerticalContentAlignment="Center"/>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Background="#F3F1F1" IsReadOnly="True" Text="Тема" Style="{DynamicResource TextBoxMonoStyle}" Height="50" Width="240"/>
-                        <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="10"/>
-                        <Button Background="#848484" x:Name="themeBtn" Style="{DynamicResource ButtonMonoStyle}" Height="50" Width="50" Content="Mono" FontSize="13"/>
+                        <TextBox Background="#F3F1F1" 
+                                 IsReadOnly="True" 
+                                 Text="Тема" 
+                                 Style="{DynamicResource TextBoxMonoStyle}" 
+                                 Height="50" 
+                                 Width="240"/>
+                        <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                                   Width="10"/>
+                        <Button x:Name="themeBtn" 
+                                Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                                Height="50" 
+                                Width="50" 
+                                Content="Mono"
+                                FontSize="13"/>
                     </StackPanel>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Background="#F3F1F1" IsReadOnly="True" Text="Размер шрифта" Style="{DynamicResource TextBoxMonoStyle}" Height="50" Width="240"/>
-                        <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="10"/>
-                        <Button Background="#848484" x:Name="fontSizeBtn" Style="{DynamicResource ButtonMonoStyle}" Height="50" Width="50" Content="3" FontSize="20"/>
+                        <TextBox Background="#F3F1F1" 
+                                 IsReadOnly="True" 
+                                 Text="Размер шрифта" 
+                                 Style="{DynamicResource TextBoxMonoStyle}" 
+                                 Height="50"
+                                 Width="240"/>
+                        <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                                   Width="10"/>
+                        <Button x:Name="fontSizeBtn" 
+                                Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                                Height="50" 
+                                Width="50" 
+                                Content="3" 
+                                FontSize="20"/>
                     </StackPanel>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Background="#F3F1F1" IsReadOnly="True" Text="Количество отображаемых записей на странице журнала" TextWrapping="Wrap" FontSize="16"
-                                  Style="{DynamicResource TextBoxMonoStyle}" Height="70" Width="240"/>
-                        <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="10"/>
-                        <Button Background="#848484" x:Name="countRowsBtn" Style="{DynamicResource ButtonMonoStyle}" Height="50" Width="50" Content="10" FontSize="20"/>
+                        <TextBox Background="#F3F1F1" 
+                                 IsReadOnly="True" 
+                                 Text="Количество отображаемых записей на странице журнала" 
+                                 TextWrapping="Wrap" 
+                                 FontSize="16"
+                                 Style="{DynamicResource TextBoxMonoStyle}" 
+                                 Height="70" 
+                                 Width="240"/>
+                        <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                                   Width="10"/>
+                        <Button x:Name="countRowsBtn" 
+                                Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                                Height="50" 
+                                Width="50" 
+                                Content="10" 
+                                FontSize="20"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
-            <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="50"/>
+            <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                       Width="50"/>
             <Grid>
-                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="350" Fill="#D7D7D7" RadiusX="45" RadiusY="45"/>
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="350">
-                    <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="10"/>
-                    <TextBox IsReadOnly="True" Text="Аккаунт" Style="{DynamicResource TextBoxMonoStyle}" Width="280" Height="50" Background="#565656"
-                             Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Rectangle HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Width="300" 
+                           Height="350" 
+                           Fill="#D7D7D7" 
+                           RadiusX="45" 
+                           RadiusY="45"/>
+                <StackPanel HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            Width="300" 
+                            Height="350">
+                    <Separator Style="{DynamicResource SeparatorMonoStyle}"
+                               Height="10"/>
+                    <TextBox IsReadOnly="True" 
+                             Text="Аккаунт" 
+                             Style="{DynamicResource TextBoxMonoStyle}" 
+                             Width="280" 
+                             Height="50" 
+                             Background="#565656"
+                             Foreground="White" 
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center"/>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-                    <Button Foreground="Black" Background="#F3F1F1" Style="{DynamicResource ButtonMonoStyle}" Height="60" Width="290" Content="Сменить пароль"/>
+                    <Button Foreground="Black" 
+                            Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                            Height="60" 
+                            Width="290" 
+                            Content="Сменить пароль"/>
                     <Separator  Style="{DynamicResource SeparatorMonoStyle}"/>
-                    <Button Foreground="Black" Background="#F3F1F1" Style="{DynamicResource ButtonMonoStyle}" Height="60" Width="290" Content="Восстановить пароль"/>
+                    <Button Foreground="Black"
+                            Style="{DynamicResource ButtonSecondAccentMonoStyle}" 
+                            Height="60" 
+                            Width="290" 
+                            Content="Восстановить пароль"/>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-                    <Button Background="#848484" Style="{DynamicResource ButtonMonoStyle}" Height="60" Width="290" Content="Выйти"/>
+                    <Button Style="{DynamicResource ButtonSecondAccentMonoStyle}"
+                            Height="60" 
+                            Width="290" 
+                            Content="Выйти"/>
                 </StackPanel>
             </Grid>
 

@@ -5,43 +5,107 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PostControl"
         mc:Ignorable="d"
-        Height="820" Width="1500" WindowStyle="None">
+        Height="820" 
+        Width="1500" 
+        WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="19*"/>
             <RowDefinition Height="28*"/>
             <RowDefinition Height="158*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Width="NaN">
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    Width="NaN">
             <Border Style="{DynamicResource BorderMonoStyle}">
-                <Label Style="{DynamicResource LabelMonoStyle}" Content="Журналы" />
+                <Label Style="{DynamicResource LabelMonoStyle}" 
+                       Content="Журналы" />
             </Border>
-            <Button x:Name="exitBtn" Style="{DynamicResource exitBtnStyle}" Width="50"/>
+            <Button x:Name="exitBtn" 
+                    Style="{DynamicResource exitBtnStyle}" 
+                    Width="50"/>
         </StackPanel>
-        <TextBox Style="{DynamicResource NotAccentTextBlockMonoStyle}" Text="Регистрация документа" Grid.Row="1" Width="1450" Height="70" FontSize="35" VerticalContentAlignment="Center"/>
+        <TextBox Style="{DynamicResource NotAccentTextBlockMonoStyle}" 
+                 Text="Регистрация документа" 
+                 Grid.Row="1"
+                 Width="1450" 
+                 Height="70" 
+                 FontSize="35" 
+                 VerticalContentAlignment="Center"/>
         <Grid Grid.Row="2">
-            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="550" Style="{DynamicResource MonoDarkRectangle}"/>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="1000" Height="550">
-                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="30"/>
-                <TextBox x:Name="сorrespondentTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Корреспондент" Width="930" Height="70" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" Foreground="{DynamicResource MonoNonAccentColor}"/>
+            <Rectangle HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Width="1000" 
+                       Height="550" 
+                       Style="{DynamicResource MonoDarkRectangle}"/>
+            <StackPanel HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Width="1000" 
+                        Height="550">
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                           Height="30"/>
+                <TextBox x:Name="сorrespondentTxt" 
+                         Style="{DynamicResource TextBoxMonoStyle}" 
+                         Text="Корреспондент" 
+                         Width="930" 
+                         Height="70" 
+                         VerticalContentAlignment="Center" 
+                         FontSize="20" 
+                         FontStyle="Italic" 
+                         Foreground="{DynamicResource MonoNonAccentColor}"/>
                 <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-                <TextBox x:Name="consistTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Состав" Width="930" Height="70" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" Foreground="{DynamicResource MonoNonAccentColor}"/>
+                <TextBox x:Name="consistTxt" 
+                         Style="{DynamicResource TextBoxMonoStyle}" 
+                         Text="Состав" 
+                         Width="930" 
+                         Height="70" 
+                         VerticalContentAlignment="Center"
+                         FontSize="20" 
+                         FontStyle="Italic" 
+                         Foreground="{DynamicResource MonoNonAccentColor}"/>
                 <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-                <TextBox x:Name="contentTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Содержание" Width="930" Height="70" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" Foreground="{DynamicResource MonoNonAccentColor}"/>
+                <TextBox x:Name="contentTxt" 
+                         Style="{DynamicResource TextBoxMonoStyle}" 
+                         Text="Содержание" 
+                         Width="930"
+                         Height="70" 
+                         VerticalContentAlignment="Center"
+                         FontSize="20" 
+                         FontStyle="Italic" 
+                         Foreground="{DynamicResource MonoNonAccentColor}"/>
                 <Separator Style="{DynamicResource SeparatorMonoStyle}"/>
-                <TextBox x:Name="executorTxt" Style="{DynamicResource TextBoxMonoStyle}" Text="Исполнитель" Width="930" Height="70" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" Foreground="{DynamicResource MonoNonAccentColor}"/>
-                <Separator Style="{DynamicResource SeparatorMonoStyle}" Height="30"/>
+                <TextBox x:Name="executorTxt" 
+                         Style="{DynamicResource TextBoxMonoStyle}" 
+                         Text="Исполнитель" 
+                         Width="930" 
+                         Height="70" 
+                         VerticalContentAlignment="Center"
+                         FontSize="20"
+                         FontStyle="Italic" 
+                         Foreground="{DynamicResource MonoNonAccentColor}"/>
+                <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                           Height="30"/>
                 <StackPanel Orientation="Horizontal">
-                    <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="30"/>
-                    <CheckBox FontFamily="PF Square Sans Pro" Content="Регистрировать задним числом" Foreground="{DynamicResource MonoNonAccentColor}" FontSize="10" Width="170" VerticalContentAlignment="Center">
+                    <Separator Style="{DynamicResource SeparatorMonoStyle}" 
+                               Width="30"/>
+                    <CheckBox FontFamily="PF Square Sans Pro" 
+                              Content="Регистрировать задним числом" 
+                              Foreground="{DynamicResource MonoNonAccentColor}" 
+                              FontSize="10" 
+                              Width="170" 
+                              VerticalContentAlignment="Center">
                         <CheckBox.LayoutTransform>
-                            <ScaleTransform ScaleX="3" ScaleY="3" />
+                            <ScaleTransform ScaleX="3" 
+                                            ScaleY="3" />
                         </CheckBox.LayoutTransform>
                     </CheckBox>
                     <Separator Style="{DynamicResource SeparatorMonoStyle}" Width="100"/>
-                    <DatePicker Style="{DynamicResource DatePickerMonoStyle}" FontFamily="PF Square Sans Pro" Height="50" Width="300" FontSize="20"/>
-                </StackPanel>
-
+                    <DatePicker Style="{DynamicResource DatePickerMonoStyle}"
+                                FontFamily="PF Square Sans Pro" 
+                                Height="50" 
+                                Width="300" 
+                                FontSize="20"/>
+                </StackPanel>я
             </StackPanel>
         </Grid>
     </Grid>
